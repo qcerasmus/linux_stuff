@@ -1,0 +1,9 @@
+[[language]]
+name = "cpp"
+language-server = { command = "clangd" }
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "cmake"
+language-server = { command = "cmake-language-server" }
+

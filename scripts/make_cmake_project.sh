@@ -49,7 +49,7 @@ int main()
 }
 " >> console/main.cpp
 
-cp ~/configs/.clang-format .
+cp ~/linux_stuff/configs/.clang-format .
 git init --initial-branch=main
 touch .gitignore
 echo "**build-debug/*" >> .gitignore

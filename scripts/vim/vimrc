@@ -26,6 +26,13 @@ call plug#end()
 
 syntax on
 
+let mapleader = ","
+set timeoutlen=200
+inoremap mm <esc>
+vnoremap mm <esc>
+cnoremap mm <C-C>
+nnoremap U <C-R>
+
 let g:lightline = {
 	\ 'colorscheme': 'onedark',
 	\ }
@@ -73,6 +80,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> gN <plug>(lsp-next-error)
     nmap <buffer> gP <plug>(lsp-previous-error)
     nmap <buffer> ga <plug>(lsp-code-action)
+    nmap <buffer> gk <plug>(lsp-document-format)
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 

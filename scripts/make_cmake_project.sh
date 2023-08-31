@@ -62,7 +62,7 @@ logicalCpuCount=$([ $(uname) = 'Darwin' ] &&
                        lscpu -p | egrep -v '^#' | wc -l)
 cd build-debug
 cmake .. -DCMAKE_BUILD_TYPE=Debug
-cmake --build . -j$((logicalCpuCount-4))
+cmake --build .
 cd ../build-release
 cmake ..
-cmake --build . -j$((logicalCpuCount-4))
+cmake --build . 

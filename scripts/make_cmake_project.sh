@@ -55,14 +55,18 @@ touch .gitignore
 echo "**build-debug/*" >> .gitignore
 echo "**build-release/*" >> .gitignore
 echo ".cache/*" >> .gitignore
-mkdir build-debug
-mkdir build-release
-logicalCpuCount=$([ $(uname) = 'Darwin' ] &&
-                       sysctl -n hw.logicalcpu_max ||
-                       lscpu -p | egrep -v '^#' | wc -l)
-cd build-debug
-cmake .. -DCMAKE_BUILD_TYPE=Debug
+
+echo "path='Debug'
+if [ \"\$#\" -ge 1 ]; then
+  path='Release'
+fi
+if [ ! -d \"xbuild/\$path\" ]; then
+  mkdir -p \"xbuild/\$path\" 
+fi
+cd \"xbuild/\$path\"
+cmake ../.. -DCMAKE_BUILD_TYPE=\$path
 cmake --build .
-cd ../build-release
-cmake ..
-cmake --build . 
+cp compile_commands.json ../..
+" >> build.sh
+chmod +x build.sh
+

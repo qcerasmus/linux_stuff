@@ -54,6 +54,7 @@ git init --initial-branch=main
 touch .gitignore
 echo "**build-debug/*" >> .gitignore
 echo "**build-release/*" >> .gitignore
+echo ".cache/*" >> .gitignore
 mkdir build-debug
 mkdir build-release
 logicalCpuCount=$([ $(uname) = 'Darwin' ] &&

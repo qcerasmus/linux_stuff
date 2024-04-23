@@ -24,12 +24,29 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_subdirectory(third_party)
+include_directories(${spdlog_SOURCE})
 add_subdirectory(console)
 " >> CMakeLists.txt
 
 mkdir third_party
 touch third_party/CMakeLists.txt
 echo "include(FetchContent)
+
+FetchContent_Declare(
+  spdlog
+  GIT_REPOSITORY https://github.com/gabime/spdlog.git
+  GIT_TAG v1.13.0
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND ""
+)
+
+FetchContent_GetProperties(spdlog)
+if (NOT spdlog_POPULATED)
+  FetchContent_Populate(spdlog)
+endif()
+
+add_library(spdlog INTERFACE)
+set(spdlog_SOURCE ${spdlog_SOURCE_DIR}/include PARENT_SCOPE)
 " >> third_party/CMakeLists.txt
 
 mkdir console

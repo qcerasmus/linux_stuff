@@ -58,11 +58,14 @@ add_executable(console \${console_headers} \${console_sources})
 " >> console/CMakeLists.txt
 
 touch console/main.cpp
-echo "#include <iostream>
+echo "#include <spdlog/common.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+#include <spdlog/spdlog.h>
 
 int main()
 {
-    std::cout << \"Hello World\\n\";
+    spdlog::set_level(spdlog::level::trace);
+    spdlog::debug(\"Hello, World!\");
 }
 " >> console/main.cpp
 

@@ -24,7 +24,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_subdirectory(third_party)
-include_directories(${spdlog_SOURCE})
+include_directories(\${spdlog_SOURCE})
 add_subdirectory(console)
 " >> CMakeLists.txt
 
@@ -46,7 +46,7 @@ if (NOT spdlog_POPULATED)
 endif()
 
 add_library(spdlog INTERFACE)
-set(spdlog_SOURCE ${spdlog_SOURCE_DIR}/include PARENT_SCOPE)
+set(spdlog_SOURCE \${spdlog_SOURCE_DIR}/include PARENT_SCOPE)
 " >> third_party/CMakeLists.txt
 
 mkdir console

@@ -26,11 +26,11 @@ call plug#end()
 
 syntax on
 
-let mapleader = ","
+let mapleader = " "
 set timeoutlen=200
-inoremap mm <esc>
-vnoremap mm <esc>
-cnoremap mm <C-C>
+inoremap <leader><leader> <esc>
+vnoremap <leader><leader> <esc>
+cnoremap <leader><leader> <C-C>
 nnoremap U <C-R>
 
 let g:lightline = {

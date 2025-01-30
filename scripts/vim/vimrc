@@ -66,6 +66,8 @@ map gp :bprevious<CR>
 map bc :bd<CR>
 
 nmap <leader>si <Plug>VimspectorStepInto
+nmap <leader>so <Plug>VimspectorStepOut
+nmap <leader>sn <Plug>VimspectorStepOver
 nnoremap <leader>rs :call vimspector#Reset()<CR>
 
 if executable('clangd')

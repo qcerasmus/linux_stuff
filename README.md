@@ -24,10 +24,11 @@ This includes:
 - vim-lsp-settings = 
 - asyncomplete = auto complete
 - asyncomplete-lsp = auto complete with lsp integration
+- vimspector = Debuggin in vim like an IDE.
 
 ### vim keybinds
-- leader = ,
-- mm = escape
+- leader = ' ' # space
+- leader twice = escape
 - U = redo
 - F2 = Nerd tree toggle
 - control+hjkl = move between windows
@@ -35,7 +36,7 @@ This includes:
 - gp = buffer previous
 - bc = buffer delete
 
-LSP
+###LSP
 - gd = go to definition
 - gs = document symbol search
 - gS = workspace symbol search
@@ -50,6 +51,15 @@ LSP
 - gP = previous error
 - ga = code action
 - gk = format document
+
+### Vimspector
+- F5 = Start debugging
+- F8 = Jump to next breakpoint in file
+- Shift F8 = Jump to previous breakpoint in file
+- F9 = Toggle breakpoint
+- F10 = step next line
+- leader si = step into
+- leader so = step out
 
 ### make_cmake_project.sh
 Run it with an argument for the project name.

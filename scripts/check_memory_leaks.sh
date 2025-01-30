@@ -5,5 +5,5 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose $1
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes $1
 

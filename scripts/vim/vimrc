@@ -6,7 +6,6 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set softtabstop=4
-set mouse=a
 set encoding=UTF-8
 
 call plug#begin()
@@ -20,6 +19,7 @@ call plug#begin()
 	Plug 'prabirshrestha/asyncomplete-lsp.vim'
 	Plug 'ap/vim-buftabline' "top bar to show open buffers
 	Plug 'sheerun/vim-polyglot'
+	Plug 'puremourning/vimspector' "debugging
 call plug#end()
 
 let g:airline_powerline_fonts = 1
@@ -27,6 +27,8 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " airline symbols
 let g:airline_left_sep = ''
@@ -63,11 +65,14 @@ map gn :bnext<CR>
 map gp :bprevious<CR>
 map bc :bd<CR>
 
+nmap <leader>si <Plug>VimspectorStepInto
+nnoremap <leader>rs :call vimspector#Reset()<CR>
+
 if executable('clangd')
 	au User lsp_setup call lsp#register_server({
 		\ 'name': 'clangd',
-		\ 'cmd': {server_info->[clangd']},
-		\ 'allowlist': ['cpp', 'c'],
+		\ 'cmd': {server_info->['clangd']},
+		\ 'allowlist': ['cpp', 'c']
 		\ })
 endif
 

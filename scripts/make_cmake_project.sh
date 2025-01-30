@@ -89,4 +89,4 @@ cmake --build .
 cp compile_commands.json ../..
 " >> build.sh
 chmod +x build.sh
-
+cp ~/linux_stuff/configs/.vimspector.json .

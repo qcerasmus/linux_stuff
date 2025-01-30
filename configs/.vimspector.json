@@ -1,0 +1,19 @@
+{
+  "configurations": {
+    "Vim - run a test": {
+      "adapter": "vscode-cpptools",
+      "configuration": {
+        "type":    "cppdbg",
+        "request": "launch",
+        "program": "${workspaceRoot}/xbuild/Debug/console/console",
+        "cwd": "${workspaceRoot}/xbuild/Debug/console",
+        "externalConsole": true,
+        "stopAtEntry": true,
+        "MIMode": "gdb",
+        "logging": {
+          "engineLogging": false
+        }
+      }
+    }
+  }
+}

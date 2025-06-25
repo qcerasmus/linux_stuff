@@ -35,15 +35,11 @@ echo "include(FetchContent)
 FetchContent_Declare(
   spdlog
   GIT_REPOSITORY https://github.com/gabime/spdlog.git
-  GIT_TAG v1.13.0
-  CONFIGURE_COMMAND ""
-  BUILD_COMMAND ""
+  GIT_TAG v1.15.3
+  GIT_SHALLOW true
+  SOURCE_SUBDIR paththatdoesnotexist
 )
-
-FetchContent_GetProperties(spdlog)
-if (NOT spdlog_POPULATED)
-  FetchContent_Populate(spdlog)
-endif()
+FetchContent_MakeAvailable(spdlog)
 
 add_library(spdlog INTERFACE)
 set(spdlog_SOURCE \${spdlog_SOURCE_DIR}/include PARENT_SCOPE)
@@ -75,6 +71,7 @@ touch .gitignore
 echo "**build-debug/*" >> .gitignore
 echo "**build-release/*" >> .gitignore
 echo ".cache/*" >> .gitignore
+echo "xbuild/*" >> .gitignore
 
 echo "path='Debug'
 if [ \"\$#\" -ge 1 ]; then

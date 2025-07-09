@@ -12,6 +12,7 @@ if [ -d "$project_name" ]; then
 fi
 mkdir "${project_name}"
 cd "${project_name}"
+mkdir "include"
 
 touch CMakeLists.txt
 
@@ -25,6 +26,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(TESTING ON)
 
 add_subdirectory(third_party)
+include_directories(include)
 include_directories(\${spdlog_SOURCE})
 if (\${TESTING})
   enable_testing()

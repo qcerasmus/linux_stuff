@@ -1,7 +1,7 @@
 {
   "configurations": {
     "Vim - run a test": {
-      "adapter": "vscode-cpptools",
+      "adapter": "CodeLLDB",
       "configuration": {
         "type":    "cppdbg",
         "request": "launch",
@@ -9,7 +9,7 @@
         "cwd": "${workspaceRoot}/xbuild/Debug/console",
         "externalConsole": true,
         "stopAtEntry": true,
-        "MIMode": "gdb",
+        "MIMode": "lldb",
         "logging": {
           "engineLogging": false
         }

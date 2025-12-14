@@ -15,27 +15,27 @@ fi
 mkdir "${project_name}"
 cd "${project_name}"
 
-echo "CFLAGS := -std=c23 \
-	-O2 \
-	-Wall \
-	-Wextra \
-	-Werror \
-	-fdiagnostics-color=always \
-	-fsanitize=address,undefined \
-	-fno-common \
-	-Winit-self \
-	-Wfloat-equal \
-	-Wundef \
-	-Wshadow \
-	-Wpointer-arith \
-	-Wcast-align \
-	-Wstrict-prototypes \
-	-Wstrict-overflow=5 \
-	-Wwrite-strings \
-	-Waggregate-return \
-	-Wcast-qual \
-	-Wswitch-default \
-	-Wno-discarded-qualifiers \
+echo "CFLAGS := -std=c23 \\
+	-O2 \\
+	-Wall \\
+	-Wextra \\
+	-Werror \\
+	-fdiagnostics-color=always \\
+	-fsanitize=address,undefined \\
+	-fno-common \\
+	-Winit-self \\
+	-Wfloat-equal \\
+	-Wundef \\
+	-Wshadow \\
+	-Wpointer-arith \\
+	-Wcast-align \\
+	-Wstrict-prototypes \\
+	-Wstrict-overflow=5 \\
+	-Wwrite-strings \\
+	-Waggregate-return \\
+	-Wcast-qual \\
+	-Wswitch-default \\
+	-Wno-discarded-qualifiers \\
 	-Wno-aggregate-return
 
 FILES := \$(shell find . -name \"*.c\")

@@ -106,7 +106,7 @@ TEST_CASE(\"testing the factorial function\") {
 echo "add_executable(${project_name}_test ${project_name}.cpp)
 add_test(${project_name}_test ${project_name}_test)" >> testing/CMakeLists.txt
 
-cp ~/linux_stuff/configs/.clang-format .
+cp ~/linux_stuff/scripts/cpp_files/.clang-format .
 git init --initial-branch=main
 touch .gitignore
 echo "**build-debug/*" >> .gitignore
@@ -127,4 +127,4 @@ cmake --build .
 cp compile_commands.json ../..
 " >> build.sh
 chmod +x build.sh
-cp ~/linux_stuff/configs/.vimspector.json .
+cp ~/linux_stuff/scripts/cpp_files/.vimspector.json .

@@ -5,8 +5,8 @@
       "configuration": {
         "type":    "cppdbg",
         "request": "launch",
-        "program": "${workspaceRoot}/xbuild/Debug/console/console",
-        "cwd": "${workspaceRoot}/xbuild/Debug/console",
+        "program": "${workspaceRoot}/../xbuild/Debug/console/console",
+        "cwd": "${workspaceRoot}/../xbuild/Debug/console",
         "externalConsole": true,
         "stopAtEntry": true,
         "MIMode": "lldb",

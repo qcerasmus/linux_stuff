@@ -103,8 +103,8 @@ TEST_CASE(\"testing the factorial function\") {
     CHECK(factorial(10) == 3628800);
 }" >> testing/${project_name}.cpp
 
-echo "add_executable(${project_name}_test ${project_name}.cpp)
-add_test(${project_name}_test ${project_name}_test)" >> testing/CMakeLists.txt
+echo "add_executable(testing ${project_name}.cpp)
+add_test(testing ${project_name}_test)" >> testing/CMakeLists.txt
 
 cp ~/linux_stuff/scripts/cpp_files/.clang-format .
 git init --initial-branch=main
@@ -127,4 +127,7 @@ cmake --build .
 cp compile_commands.json ../..
 " >> build.sh
 chmod +x build.sh
-cp ~/linux_stuff/scripts/cpp_files/.vimspector.json .
+./build.sh
+cp ~/linux_stuff/scripts/cpp_files/.vimspector.json console/
+cp ~/linux_stuff/scripts/cpp_files/.vimspector.json testing/
+sed -i -e 's/console/testing/g' testing/.vimspector.json

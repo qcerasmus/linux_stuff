@@ -1,4 +1,9 @@
-#!/bin/bash
+dotnet_version="$(dotnet --version)"
+if [[ $dotnet_version == 1* ]]; then
+  dotnet_version="${dotnet_version:0:4}"
+else
+  dotnet_version="${dotnet_version:0:3}"
+fi
 
 if [ "$#" -ne 1 ]; then
   echo "Please provide the project name."
@@ -13,8 +18,6 @@ fi
 dotnet new console --name ${project_name}
 cd "${project_name}"
 
-dotnet_version="$(dotnet --version)"
-dotnet_version="${dotnet_version:0:3}"
 echo "{
   \"configurations\": {
     \"launch - netcoredbg\": {
